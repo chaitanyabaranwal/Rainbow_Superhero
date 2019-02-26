@@ -20,7 +20,7 @@ const getBucketLength = (params, count = 0) => new Promise((resolve, reject) => 
       })
       .catch(reject);
 });
-  
+
 // function to load images
 function loadImages() {
   getBucketLength(params).then(function(length) {
@@ -35,7 +35,7 @@ function loadImages() {
       img.src = config.baseUrl + (img_count - i - 1 == 0 ? '' : ` (${id})`) + '.png';
       document.getElementById('photos').appendChild(img);
     }
-    
+
   });
 }
 
@@ -72,6 +72,6 @@ $(document).ready(function() {
   // refresh every 10 seconds
   window.setInterval(function(){
     refreshImages();
-    console.log("Function called!");
+    console.log("Images refreshed!");
   }, 10000);
 });
