@@ -26,7 +26,7 @@ function loadImages() {
   getBucketLength(params).then(function(length) {
 
     // number of images to be shown in page
-    const img_count = Math.min(length, 8);
+    const img_count = Math.min(length, config.maxImages);
 
     for (let i = 0; i < img_count; i++) {
       let img = document.createElement('img');
@@ -44,7 +44,7 @@ function refreshImages() {
   getBucketLength(params).then(function(length) {
 
     // number of images to be shown in page
-    const img_count = Math.min(length, 8);
+    const img_count = Math.min(length, config.maxImages);
 
     for (let i = 0; i < img_count; i++) {
       const id = `${img_count-i-1}`;
@@ -56,6 +56,8 @@ function refreshImages() {
       }
       img.src = config.baseUrl + (img_count - i - 1 == 0 ? '' : ` (${id})`) + '.png';
     }
+
+    console.log("Images refreshed!");
 
   });
 }
@@ -72,6 +74,5 @@ $(document).ready(function() {
   // refresh every 10 seconds
   window.setInterval(function(){
     refreshImages();
-    console.log("Images refreshed!");
   }, 10000);
 });
