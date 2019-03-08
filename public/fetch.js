@@ -27,12 +27,13 @@ function loadImages() {
 
     // number of images to be shown in page
     const img_count = Math.min(length, config.maxImages);
+    console.log(img_count);
 
     for (let i = 0; i < img_count; i++) {
       let img = document.createElement('img');
-      const id = `${img_count-i-1}`;
+      const id = `${length-i-1}`;
       img.id = id;
-      img.src = config.baseUrl + (img_count - i - 1 == 0 ? '' : ` (${id})`) + '.png';
+      img.src = config.baseUrl + (length - i - 1 == 0 ? '' : ` (${id})`) + '.png';
       document.getElementById('photos').appendChild(img);
     }
 
@@ -47,14 +48,14 @@ function refreshImages() {
     const img_count = Math.min(length, config.maxImages);
 
     for (let i = 0; i < img_count; i++) {
-      const id = `${img_count-i-1}`;
+      const id = `${length-i-1}`;
       let img = document.getElementById(id);
       if (!img) {
         img = document.createElement('img');
         img.id = id;
         document.getElementById('photos').appendChild(img);
       }
-      img.src = config.baseUrl + (img_count - i - 1 == 0 ? '' : ` (${id})`) + '.png';
+      img.src = config.baseUrl + (length - i - 1 == 0 ? '' : ` (${id})`) + '.png';
     }
 
     console.log("Images refreshed!");
