@@ -16,7 +16,8 @@ const getBucketLength = (params, count = 0) => new Promise((resolve, reject) => 
     s3.listObjectsV2(params).promise()
       .then(({Contents, IsTruncated, NextContinuationToken}) => {
         count += Contents.length;
-        !IsTruncated ? resolve(count) : resolve(getBucketLength(Object.assign(params, {ContinuationToken: NextContinuationToken}), count));
+        !IsTruncated ? resolve(count) : resolve(getBucketLength(Object.assign(params, 
+            {ContinuationToken: NextContinuationToken}), count));
       })
       .catch(reject);
 });
@@ -24,16 +25,14 @@ const getBucketLength = (params, count = 0) => new Promise((resolve, reject) => 
 // function to load images
 function loadImages() {
   getBucketLength(params).then(function(length) {
-
     // number of images to be shown in page
     const img_count = Math.min(length, config.maxImages);
-    console.log(img_count);
 
-    for (let i = 0; i < img_count; i++) {
+    for (let i = 1; i <= img_count; i++) {
       let img = document.createElement('img');
-      const id = `${length-i-1}`;
+      const id = `${img_count - i}`;
       img.id = id;
-      img.src = config.baseUrl + (length - i - 1 == 0 ? '' : ` (${id})`) + '.png';
+      img.src = config.baseUrl + (length - i == 0 ? '' : ` (${length - i})`) + '.png';
       document.getElementById('photos').appendChild(img);
     }
 
@@ -43,19 +42,18 @@ function loadImages() {
 // function to reload image sources
 function refreshImages() {
   getBucketLength(params).then(function(length) {
-
     // number of images to be shown in page
     const img_count = Math.min(length, config.maxImages);
 
-    for (let i = 0; i < img_count; i++) {
-      const id = `${length-i-1}`;
+    for (let i = 1; i <= img_count; i++) {
+      const id = `${img_count - i}`;
       let img = document.getElementById(id);
       if (!img) {
         img = document.createElement('img');
         img.id = id;
         document.getElementById('photos').appendChild(img);
       }
-      img.src = config.baseUrl + (length - i - 1 == 0 ? '' : ` (${id})`) + '.png';
+      img.src = config.baseUrl + (length - i == 0 ? '' : ` (${length - i})`) + '.png';
     }
 
     console.log("Images refreshed!");
