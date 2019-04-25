@@ -1,0 +1,17 @@
+{
+    "name": "posenet-eyetracker",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "aws-sdk": "^2.399.0",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "fs": "0.0.1-security",
+        "path": "^0.12.7"
+    },
+    "devDependencies": {}
+}

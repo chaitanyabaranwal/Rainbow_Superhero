@@ -1,0 +1,46 @@
+body {
+    background-image: url("sky.png");
+}
+
+#video {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    background: none !important;
+    border: none; 
+    padding: 0 !important;
+    color: #FA8072;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    height: 65px;
+    z-index: 1;
+}
+
+.alert {
+    margin-top: 5px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.credits > p {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    font-size: 80%;
+    font-family: 'Futura';
+}
