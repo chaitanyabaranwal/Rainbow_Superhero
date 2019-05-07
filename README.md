@@ -8,7 +8,7 @@ The most important aspect of the project involved is the web application which u
 
 My work on this section of the project includes design improvements, as well as customizations such as line colors and width to make the app more interactive. I also introduced a pair of googly eyes which looks pretty cool! 
 
-The main aspect of my work imvolved the **Submit Image** option, which downloads the drawn image into local memory, and then pushes the image into a [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/) server for object storage. 
+The main aspect of my work involved the **Submit Image** option, which downloads the drawn image into local memory, and then pushes the image into a [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/) server for object storage. 
 
 #### Getting started locally
 
