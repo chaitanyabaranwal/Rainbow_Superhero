@@ -1,3 +1,5 @@
+UPDATE: I wrote an article about my experience with developing this project, which can me found [here](https://medium.com/swlh/my-experience-with-using-digitalocean-spaces-in-javascript-1669abf66fb6).
+
 # Rainbow Superhero Project
 
 This was a small project I needed to finish foran artist at 'Peekaboo!', which is an inclusive arts festival held at Rainbow Centre, Singapore. The basic idea was that children with limited mobility can use their eyes to draw things on a computer. While the first folder titled **'Eyetracker_Drawing'** was already done when I started working on the project, I did introduce some improvements to it. The main work focused on pushing the drawn to a server, and display them in another bigger screen for the purposes of the exhibition.
